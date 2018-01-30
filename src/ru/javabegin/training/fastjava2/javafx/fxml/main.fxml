@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import org.controlsfx.control.textfield.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
+
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.javabegin.training.fastjava2.javafx.controllers.MainController">
     <children>
         <HBox maxHeight="50.0" prefHeight="100.0">
@@ -53,6 +56,7 @@
       <AnchorPane prefHeight="30.0" prefWidth="200.0">
          <children>
                 <Label fx:id="labelCount" text="%count" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+            <ComboBox fx:id="comboLocales" layoutX="229.0" layoutY="-1.0" prefHeight="31.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
