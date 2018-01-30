@@ -24,28 +24,8 @@ public class Main extends Application {
 
     private void testData() {
         CollectionAddressBook addressBook = new CollectionAddressBook();
-
-        Person person = new Person();
-        person.setFio("test1");
-        person.setPhone("123123123");
-
-
-        Person person2 = new Person();
-        person2.setFio("test2");
-        person2.setPhone("467657");
-
-        addressBook.add(person);
-        addressBook.add(person2);
-
-
-
-        person.setPhone("1111111");
-//        addressBook.update(person);
-
-
-        addressBook.delete(person);
-
-
+        addressBook.fillTestData();
+        addressBook.print();
     }
 
 
