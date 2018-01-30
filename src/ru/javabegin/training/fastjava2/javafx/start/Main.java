@@ -12,12 +12,16 @@ import java.util.ResourceBundle;
 
 public class Main extends Application {
 
+    private static final Locale DEFAULT_LOCALE = new Locale("en");
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        Locale.setDefault(DEFAULT_LOCALE);
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("../fxml/main.fxml"));
-        fxmlLoader.setResources(ResourceBundle.getBundle("ru.javabegin.training.fastjava2.javafx.bundles.Locale", new Locale("ru")));
+        fxmlLoader.setResources(ResourceBundle.getBundle("ru.javabegin.training.fastjava2.javafx.bundles.Locale"));
 
         Parent fxmlMain = fxmlLoader.load();
         MainController mainController = fxmlLoader.getController();

@@ -10,17 +10,17 @@
     <children>
         <HBox maxHeight="50.0" prefHeight="100.0">
             <children>
-                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#actionButtonPressed" text="Добавить">
+                <Button fx:id="btnAdd" minWidth="80.0" mnemonicParsing="false" onAction="#actionButtonPressed" text="%add">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#actionButtonPressed" text="Изменить">
+                <Button fx:id="btnEdit" minWidth="80.0" mnemonicParsing="false" onAction="#actionButtonPressed" text="%edit">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#actionButtonPressed" text="Удалить">
+                <Button fx:id="btnDelete" minWidth="80.0" mnemonicParsing="false" onAction="#actionButtonPressed" text="%delete">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
@@ -30,7 +30,7 @@
         <AnchorPane maxHeight="30.0" prefHeight="100.0">
             <children>
                 <TextField fx:id="txtSearch" prefHeight="31.0" prefWidth="293.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="80.0" />
-                <Button fx:id="btnSearch" layoutX="266.0" mnemonicParsing="false" text="Поиск" AnchorPane.rightAnchor="0.0" />
+                <Button fx:id="btnSearch" layoutX="266.0" mnemonicParsing="false" text="%search" AnchorPane.rightAnchor="0.0" />
             </children>
             <VBox.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

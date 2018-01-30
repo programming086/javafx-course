@@ -18,6 +18,7 @@ import ru.javabegin.training.fastjava2.javafx.objects.Person;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -112,8 +113,8 @@ public class MainController implements Initializable{
 
     private void initLoader() {
         try {
-
             fxmlLoader.setLocation(getClass().getResource("../fxml/edit.fxml"));
+            fxmlLoader.setResources(ResourceBundle.getBundle("ru.javabegin.training.fastjava2.javafx.bundles.Locale", new Locale("en")));
             fxmlEdit = fxmlLoader.load();
             editDialogController = fxmlLoader.getController();
 
@@ -161,7 +162,7 @@ public class MainController implements Initializable{
 
         if (editDialogStage==null) {
             editDialogStage = new Stage();
-            editDialogStage.setTitle("Редактирование записи");
+            editDialogStage.setTitle(resourceBundle.getString("edit"));
             editDialogStage.setMinHeight(150);
             editDialogStage.setMinWidth(300);
             editDialogStage.setResizable(false);
@@ -173,7 +174,5 @@ public class MainController implements Initializable{
         editDialogStage.showAndWait(); // для ожидания закрытия окна
 
     }
-
-
 
 }
