@@ -1,5 +1,6 @@
 package ru.javabegin.training.fastjava2.javafx.controllers;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,16 +14,19 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.controlsfx.control.textfield.CustomTextField;
+import org.controlsfx.control.textfield.TextFields;
 import ru.javabegin.training.fastjava2.javafx.interfaces.impls.CollectionAddressBook;
 import ru.javabegin.training.fastjava2.javafx.objects.Person;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 
-public class MainController implements Initializable{
+public class MainController implements Initializable {
 
     private CollectionAddressBook addressBookImpl = new CollectionAddressBook();
 
@@ -39,7 +43,7 @@ public class MainController implements Initializable{
     private Button btnDelete;
 
     @FXML
-    private TextField txtSearch;
+    private CustomTextField txtSearch;
 
     @FXML
     private Button btnSearch;
@@ -55,7 +59,6 @@ public class MainController implements Initializable{
 
     @FXML
     private Label labelCount;
-
 
 
     private Parent fxmlEdit;
@@ -74,9 +77,20 @@ public class MainController implements Initializable{
         this.resourceBundle = resources;
         columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
         columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
+        setupClearButtonField(txtSearch);
         initListeners();
         fillData();
         initLoader();
+    }
+
+    private void setupClearButtonField(CustomTextField customTextField) {
+        try {
+            Method m = TextFields.class.getDeclaredMethod("setupClearButtonField", TextField.class, ObjectProperty.class);
+            m.setAccessible(true);
+            m.invoke(null, customTextField, customTextField.rightProperty());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void setMainStage(Stage mainStage) {
@@ -102,12 +116,12 @@ public class MainController implements Initializable{
             @Override
             public void handle(MouseEvent event) {
                 if (event.getClickCount() == 2) {
-                    editDialogController.setPerson((Person)tableAddressBook.getSelectionModel().getSelectedItem());
+                    editDialogController.setPerson((Person) tableAddressBook.getSelectionModel().getSelectedItem());
                     showDialog();
                 }
             }
         });
-        
+
 
     }
 
@@ -146,12 +160,12 @@ public class MainController implements Initializable{
                 break;
 
             case "btnEdit":
-                editDialogController.setPerson((Person)tableAddressBook.getSelectionModel().getSelectedItem());
+                editDialogController.setPerson((Person) tableAddressBook.getSelectionModel().getSelectedItem());
                 showDialog();
                 break;
 
             case "btnDelete":
-                addressBookImpl.delete((Person)tableAddressBook.getSelectionModel().getSelectedItem());
+                addressBookImpl.delete((Person) tableAddressBook.getSelectionModel().getSelectedItem());
                 break;
         }
 
@@ -160,7 +174,7 @@ public class MainController implements Initializable{
 
     private void showDialog() {
 
-        if (editDialogStage==null) {
+        if (editDialogStage == null) {
             editDialogStage = new Stage();
             editDialogStage.setTitle(resourceBundle.getString("edit"));
             editDialogStage.setMinHeight(150);
