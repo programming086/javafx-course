@@ -17,18 +17,10 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <HBox layoutX="-14.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <TilePane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Button mnemonicParsing="false" text="Button" />
-                     </children>
-                  </TilePane>
-               </children>
-            </HBox>
-         </children>
-      </Pane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" styleClass="red-button"/>
+         </center>
+      </BorderPane>
    </children>
 </GridPane>
