@@ -20,6 +20,7 @@ import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import ru.javabegin.training.fastjava2.javafx.interfaces.impls.CollectionAddressBook;
 import ru.javabegin.training.fastjava2.javafx.objects.Person;
+import ru.javabegin.training.fastjava2.javafx.utils.DialogManager;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -134,7 +135,7 @@ public class MainController implements Initializable {
     private void initLoader() {
         try {
             fxmlLoader.setLocation(getClass().getResource("../fxml/edit.fxml"));
-            fxmlLoader.setResources(ResourceBundle.getBundle("ru.javabegin.training.fastjava2.javafx.bundles.Locale", new Locale("en")));
+            fxmlLoader.setResources(ResourceBundle.getBundle("ru.javabegin.training.fastjava2.javafx.bundles.Locale", new Locale("ru")));
             fxmlEdit = fxmlLoader.load();
             editDialogController = fxmlLoader.getController();
 
@@ -156,6 +157,10 @@ public class MainController implements Initializable {
             return;
         }
 
+        Person selectedPerson = (Person) tableAddressBook.getSelectionModel().getSelectedItem();
+
+
+
         Button clickedButton = (Button) source;
 
         switch (clickedButton.getId()) {
@@ -166,15 +171,31 @@ public class MainController implements Initializable {
                 break;
 
             case "btnEdit":
-                editDialogController.setPerson((Person) tableAddressBook.getSelectionModel().getSelectedItem());
+                if (!personIsSelected(selectedPerson)) {
+                    return;
+                }
+
+                editDialogController.setPerson(selectedPerson);
                 showDialog();
                 break;
 
             case "btnDelete":
-                addressBookImpl.delete((Person) tableAddressBook.getSelectionModel().getSelectedItem());
+                if (!personIsSelected(selectedPerson)) {
+                    return;
+                }
+
+                addressBookImpl.delete(selectedPerson);
                 break;
         }
 
+    }
+
+    private boolean personIsSelected(Person selectedPerson) {
+        if(selectedPerson == null){
+            DialogManager.showInfoDialog(resourceBundle.getString("error"), resourceBundle.getString("select_person"));
+            return false;
+        }
+        return true;
     }
 
 
