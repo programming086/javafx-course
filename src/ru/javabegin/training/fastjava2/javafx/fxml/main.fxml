@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -39,8 +40,8 @@
             <children>
                 <TableView fx:id="tableAddressBook" prefHeight="400.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn fx:id="columnFIO" minWidth="100.0" text="ФИО" />
-                        <TableColumn fx:id="columnPhone" minWidth="100.0" prefWidth="-1.0" text="Телефон" />
+                        <TableColumn fx:id="columnFIO" minWidth="100.0" text="%fio" />
+                        <TableColumn fx:id="columnPhone" minWidth="100.0" prefWidth="-1.0" text="%phone" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -53,7 +54,7 @@
         </AnchorPane>
       <AnchorPane prefHeight="30.0" prefWidth="200.0">
          <children>
-                <Label fx:id="labelCount" text="Количество записей:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                <Label fx:id="labelCount" text="%count" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,14 +13,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import ru.javabegin.training.fastjava2.javafx.interfaces.impls.CollectionAddressBook;
 import ru.javabegin.training.fastjava2.javafx.objects.Person;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class MainController {
+public class MainController implements Initializable{
 
     private CollectionAddressBook addressBookImpl = new CollectionAddressBook();
 
@@ -64,19 +65,23 @@ public class MainController {
 
     private Stage editDialogStage;
 
+    private ResourceBundle resourceBundle;
 
-    public void setMainStage(Stage mainStage) {
-        this.mainStage = mainStage;
-    }
 
-    @FXML
-    private void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.resourceBundle = resources;
         columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
         columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
         initListeners();
         fillData();
         initLoader();
     }
+
+    public void setMainStage(Stage mainStage) {
+        this.mainStage = mainStage;
+    }
+
 
     private void fillData() {
         addressBookImpl.fillTestData();
@@ -118,7 +123,7 @@ public class MainController {
     }
 
     private void updateCountLabel() {
-        labelCount.setText("Количество записей: " + addressBookImpl.getPersonList().size());
+        labelCount.setText(resourceBundle.getString("count") + ": " + addressBookImpl.getPersonList().size());
     }
 
     public void actionButtonPressed(ActionEvent actionEvent) {
@@ -168,6 +173,7 @@ public class MainController {
         editDialogStage.showAndWait(); // для ожидания закрытия окна
 
     }
+
 
 
 }
