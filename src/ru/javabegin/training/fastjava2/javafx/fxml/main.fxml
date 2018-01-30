@@ -9,17 +9,17 @@
     <children>
         <HBox maxHeight="50.0" prefHeight="100.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#showDialog" text="Добавить" fx:id="addButton">
+                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#showDialog" text="Добавить">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Изменить">
+                <Button fx:id="btnEdit" mnemonicParsing="false" text="Изменить">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Удалить">
+                <Button fx:id="btnDelete" mnemonicParsing="false" text="Удалить">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
@@ -28,8 +28,8 @@
         </HBox>
         <AnchorPane maxHeight="30.0" prefHeight="100.0">
             <children>
-                <TextField prefHeight="31.0" prefWidth="293.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="80.0" />
-                <Button layoutX="266.0" mnemonicParsing="false" text="Поиск" AnchorPane.rightAnchor="0.0" />
+                <TextField fx:id="txtSearch" prefHeight="31.0" prefWidth="293.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="80.0" />
+                <Button fx:id="btnSearch" layoutX="266.0" mnemonicParsing="false" text="Поиск" AnchorPane.rightAnchor="0.0" />
             </children>
             <VBox.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -37,7 +37,7 @@
         </AnchorPane>
         <AnchorPane prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
             <children>
-                <TableView prefHeight="400.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <TableView fx:id="tableAddressBook" prefHeight="400.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                         <TableColumn minWidth="100.0" text="ФИО" />
                         <TableColumn minWidth="100.0" prefWidth="-1.0" text="Телефон" />
@@ -53,7 +53,7 @@
         </AnchorPane>
       <AnchorPane prefHeight="30.0" prefWidth="200.0">
          <children>
-                <Label text="Количество записей:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                <Label fx:id="labelCount" text="Количество записей:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
