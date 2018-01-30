@@ -1,7 +1,9 @@
 package ru.javabegin.training.fastjava2.javafx.controllers;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -71,6 +73,8 @@ public class MainController implements Initializable {
 
     private ResourceBundle resourceBundle;
 
+    private ObservableList<Person> backupList;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -100,6 +104,8 @@ public class MainController implements Initializable {
 
     private void fillData() {
         addressBookImpl.fillTestData();
+        backupList = FXCollections.observableArrayList();
+        backupList.addAll(addressBookImpl.getPersonList());
         tableAddressBook.setItems(addressBookImpl.getPersonList());
     }
 
@@ -189,4 +195,17 @@ public class MainController implements Initializable {
 
     }
 
+
+    public void actionSearch(ActionEvent actionEvent) {
+        addressBookImpl.getPersonList().clear();
+
+        for (Person person : backupList) {
+            if (person.getFio().toLowerCase().contains(txtSearch.getText().toLowerCase()) ||
+                    person.getPhone().toLowerCase().contains(txtSearch.getText().toLowerCase())) {
+                addressBookImpl.getPersonList().add(person);
+            }
+        }
+
+
+    }
 }
