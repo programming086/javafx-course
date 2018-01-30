@@ -26,10 +26,18 @@ public class EditDialogController {
     private Person person;
 
 
+
     public void setPerson(Person person) {
+        if (person == null){
+            return;
+        }
         this.person = person;
         txtFIO.setText(person.getFio());
         txtPhone.setText(person.getPhone());
+    }
+
+    public Person getPerson() {
+        return person;
     }
 
     public void actionClose(ActionEvent actionEvent) {
@@ -40,8 +48,8 @@ public class EditDialogController {
 
 
     public void actionSave(ActionEvent actionEvent) {
-        person.setPhone(txtPhone.getText());
         person.setFio(txtFIO.getText());
+        person.setPhone(txtPhone.getText());
         actionClose(actionEvent);
     }
 }

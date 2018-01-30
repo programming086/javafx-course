@@ -7,6 +7,7 @@ public class Person {
     private SimpleStringProperty fio = new SimpleStringProperty("");
     private SimpleStringProperty phone = new SimpleStringProperty("");
 
+
     public Person() {
     }
 
@@ -30,6 +31,7 @@ public class Person {
     public void setPhone(String phone) {
         this.phone.set(phone);
     }
+
 
     public SimpleStringProperty fioProperty() {
         return fio;
