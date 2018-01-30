@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.javabegin.training.fastjava2.javafx.interfaces.impls.CollectionAddressBook;
-import ru.javabegin.training.fastjava2.javafx.objects.Person;
 
 public class Main extends Application {
 
