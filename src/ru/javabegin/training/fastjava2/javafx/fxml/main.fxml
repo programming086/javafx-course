@@ -5,11 +5,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.javabegin.training.fastjava2.javafx.controllers.MainController">
     <children>
         <HBox maxHeight="50.0" prefHeight="100.0">
             <children>
-                <Button mnemonicParsing="false" text="Добавить">
+                <Button mnemonicParsing="false" onAction="#showDialog" text="Добавить">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
