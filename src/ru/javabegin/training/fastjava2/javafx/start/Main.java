@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Адресная книга");
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(400);
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -23,9 +23,9 @@ public class Main extends Application {
     }
 
     private void testData() {
-        CollectionAddressBook addressBook = new CollectionAddressBook();
-        addressBook.fillTestData();
-        addressBook.print();
+//        CollectionAddressBook addressBook = new CollectionAddressBook();
+//        addressBook.fillTestData();
+//        addressBook.print();
     }
 
 

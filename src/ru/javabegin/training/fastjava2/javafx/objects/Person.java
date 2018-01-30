@@ -5,6 +5,7 @@ public class Person {
     private String fio;
     private String phone;
 
+
     public Person(String fio, String phone) {
         this.fio = fio;
         this.phone = phone;

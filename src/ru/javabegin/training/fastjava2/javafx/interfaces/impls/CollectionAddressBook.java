@@ -1,5 +1,7 @@
 package ru.javabegin.training.fastjava2.javafx.interfaces.impls;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import ru.javabegin.training.fastjava2.javafx.interfaces.AddressBook;
 import ru.javabegin.training.fastjava2.javafx.objects.Person;
 
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 // класс реализовывает интерфейс с помощью коллекции
 public class CollectionAddressBook implements AddressBook {
 
-    private ArrayList<Person> personList = new ArrayList<Person>();
+    private ObservableList<Person> personList = FXCollections.observableArrayList();
 
     @Override
     public void add(Person person) {
@@ -27,7 +29,7 @@ public class CollectionAddressBook implements AddressBook {
         personList.remove(person);
     }
 
-    public ArrayList<Person> getPersonList() {
+    public ObservableList<Person> getPersonList() {
         return personList;
     }
 
@@ -41,15 +43,16 @@ public class CollectionAddressBook implements AddressBook {
     }
 
     public void fillTestData(){
-        personList.add(new Person("Иван", "23948723948"));
-        personList.add(new Person("Роман", "345345345"));
-        personList.add(new Person("Антон", "345345345"));
-        personList.add(new Person("Джон", "23423423"));
-        personList.add(new Person("Джек", "234234"));
-        personList.add(new Person("Алиса", "456456"));
-        personList.add(new Person("Боб", "34534345"));
+        personList.add(new Person("Иван Печкин", "23948723948"));
+        personList.add(new Person("Роман Романов", "345345345"));
+        personList.add(new Person("Антон Иванов", "345345345"));
+        personList.add(new Person("Джон Маклейн", "23423423"));
+        personList.add(new Person("Джек Воробей", "234234"));
+        personList.add(new Person("Алиса Ивановна", "456456"));
+        personList.add(new Person("Боб Марли", "34534345"));
     }
 
 
 
 }
+
