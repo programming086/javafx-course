@@ -1,0 +1,19 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <BorderPane>
+        <top>
+            <Label text="test javafx!"/>
+        </top>
+        <center>
+            <Button text="test"/>
+        </center>
+    </BorderPane>
+
+</GridPane>
