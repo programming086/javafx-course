@@ -9,7 +9,7 @@
     <children>
         <HBox maxHeight="50.0" prefHeight="100.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#showDialog" text="Добавить">
+                <Button mnemonicParsing="false" onAction="#showDialog" text="Добавить" fx:id="addButton">
                     <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>

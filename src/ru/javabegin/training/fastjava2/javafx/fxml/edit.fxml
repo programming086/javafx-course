@@ -28,7 +28,7 @@
    <center>
       <VBox minWidth="200.0" prefHeight="82.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField prefHeight="31.0" prefWidth="120.0">
+            <TextField fx:id="txtName" prefHeight="31.0" prefWidth="120.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
