@@ -12,8 +12,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import java.io.IOException;
 
+import java.io.IOException;
 
 
 public class MainController {
