@@ -52,6 +52,9 @@ public class MainController {
 
     @FXML
     private void initialize() {
+
+//        tableAddressBook.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
         columnFIO.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
         columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
 
@@ -66,6 +69,7 @@ public class MainController {
 
         tableAddressBook.setItems(addressBookImpl.getPersonList());
 
+
     }
 
     private void updateCountLabel() {
@@ -73,6 +77,32 @@ public class MainController {
     }
 
     public void showDialog(ActionEvent actionEvent) {
+
+        Object source = actionEvent.getSource();
+
+        // если нажата не кнопка - выходим из метода
+        if (!(source instanceof Button)) {
+            return;
+        }
+
+        Button clickedButton = (Button) source;
+
+        Person selectedPerson = (Person)tableAddressBook.getSelectionModel().getSelectedItem();
+
+        switch (clickedButton.getId()){
+            case "btnAdd":
+                System.out.println("add "+selectedPerson);
+                break;
+
+            case "btnEdit":
+                System.out.println("edit " + selectedPerson);
+                break;
+
+
+            case "btnDelete":
+                System.out.println("delete " + selectedPerson);
+                break;
+        }
 
         try {
 

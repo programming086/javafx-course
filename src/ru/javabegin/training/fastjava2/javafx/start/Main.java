@@ -16,15 +16,8 @@ public class Main extends Application {
         primaryStage.setMinWidth(400);
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-
-        testData();
     }
 
-    private void testData() {
-//        CollectionAddressBook addressBook = new CollectionAddressBook();
-//        addressBook.fillTestData();
-//        addressBook.print();
-    }
 
 
     public static void main(String[] args) {
